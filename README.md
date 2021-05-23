@@ -2,7 +2,7 @@
 
 Draggable and Resizable React Native Component running at 60FPS using React Native Reanimated v2
 
-![Demo](https://i.ibb.co/wJBJn3f/May-23-2021-05-48-40.gif)
+![Demo](https://i.ibb.co/NC5LMQB/reanimated-drag-resize-demo.gif)
 
 # Props
 
