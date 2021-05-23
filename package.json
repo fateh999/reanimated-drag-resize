@@ -1,0 +1,44 @@
+{
+  "name": "reanimated-drag-resize",
+  "version": "0.0.1",
+  "description": "Draggable and Resizable component running at 60FPS using React Native Reanimated v2",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/Drag.js",
+  "types": "dist/Drag.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fateh999/reanimated-drag-resize.git"
+  },
+  "keywords": [
+    "react native",
+    "react",
+    "drag",
+    "resize",
+    "reanimated"
+  ],
+  "author": "Fateh Farooqui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fateh999/reanimated-drag-resize/issues"
+  },
+  "homepage": "https://github.com/fateh999/reanimated-drag-resize#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-native": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-reanimated": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
