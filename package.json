@@ -1,6 +1,6 @@
 {
   "name": "reanimated-drag-resize",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Draggable and Resizable component running at 60FPS using React Native Reanimated v2",
   "files": [
     "dist"
