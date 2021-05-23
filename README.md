@@ -14,9 +14,8 @@ Draggable and Resizable React Native Component running at 60FPS using React Nati
 
 # Import
 
-    ```
     import Drag from 'reanimated-drag-resize';
-    ```
+
 
 # Usage
 
