@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef } from "react";
-import { Image, StyleSheet } from "react-native";
+import { I18nManager, Image, StyleSheet, } from "react-native";
 import { PanGestureHandler } from "react-native-gesture-handler";
 import Animated, { runOnJS, useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withTiming, } from "react-native-reanimated";
 const clamp = (value, lowerBound, upperBound) => {
@@ -7,7 +7,7 @@ const clamp = (value, lowerBound, upperBound) => {
     return Math.min(Math.max(lowerBound, value), upperBound);
 };
 function Drag(props) {
-    const { x, y, limitationHeight, limitationWidth, height = 100, width = 100, minHeight = height / 2, minWidth = width / 2, onDragEnd, onResizeEnd, children, resizable = true, draggable = true, resizerImageSource = require("./resize.png"), } = props;
+    const { x, y, limitationHeight, limitationWidth, height = 100, width = 100, minHeight = height / 2, minWidth = width / 2, onDragEnd, onResizeEnd, children, resizable = true, draggable = true, resizerImageSource = require("./resize.png"), style, } = props;
     const xRef = useRef(x);
     const yRef = useRef(y);
     const heightRef = useRef(height);
@@ -81,6 +81,7 @@ function Drag(props) {
         height: boxHeight.value,
         width: boxWidth.value,
         position: "absolute",
+        flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
     }));
     const styles = useMemo(() => StyleSheet.create({
         resizeBoxStyle: {
@@ -95,7 +96,7 @@ function Drag(props) {
         },
     }), []);
     return (<PanGestureHandler onGestureEvent={gestureHandler}>
-      <Animated.View style={animatedStyle}>
+      <Animated.View style={[animatedStyle, style]}>
         <PanGestureHandler onGestureEvent={resizeHandler}>
           <Animated.View style={styles.resizeBoxStyle}>
             <Image source={resizerImageSource} style={styles.imageStyle} resizeMode={"contain"}/>

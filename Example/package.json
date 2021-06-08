@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -10,11 +10,12 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@types/react-native-restart": "^0.0.14",
     "react": "17.0.1",
     "react-native": "0.64.1",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "^2.1.0",
-    "reanimated-drag-resize": "file:.."
+    "react-native-restart": "^0.0.22"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

@@ -1,22 +1,22 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, {useEffect, useMemo, useRef} from 'react';
 import {
   I18nManager,
   Image,
   ImageSourcePropType,
   StyleSheet,
   ViewStyle,
-} from "react-native";
-import { PanGestureHandler } from "react-native-gesture-handler";
+} from 'react-native';
+import {PanGestureHandler} from 'react-native-gesture-handler';
 import Animated, {
   runOnJS,
   useAnimatedGestureHandler,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
-} from "react-native-reanimated";
+} from 'react-native-reanimated';
 
 const clamp = (value: number, lowerBound: number, upperBound: number) => {
-  "worklet";
+  'worklet';
   return Math.min(Math.max(lowerBound, value), upperBound);
 };
 
@@ -60,7 +60,7 @@ function Drag(props: DragProps) {
     children,
     resizable = true,
     draggable = true,
-    resizerImageSource = require("./resize.png"),
+    resizerImageSource = require('./resize.png'),
     style,
   } = props;
 
@@ -90,12 +90,12 @@ function Drag(props: DragProps) {
       boxX.value = clamp(
         ctx.offsetX + ev.translationX,
         0,
-        limitationWidth - boxWidth.value
+        limitationWidth - boxWidth.value,
       );
       boxY.value = clamp(
         ctx.offsetY + ev.translationY,
         0,
-        limitationHeight - boxHeight.value
+        limitationHeight - boxHeight.value,
       );
     },
     onFinish: () => {
@@ -124,16 +124,16 @@ function Drag(props: DragProps) {
       boxWidth.value = clamp(
         ctx.boxWidth + ev.translationX,
         minWidth,
-        limitationWidth - boxX.value
+        limitationWidth - boxX.value,
       );
       boxHeight.value = clamp(
         ctx.boxHeight + ev.translationY,
         minHeight,
-        limitationHeight - boxY.value
+        limitationHeight - boxY.value,
       );
     },
     onFinish: () => {
-      "worklet";
+      'worklet';
       if (onResizeEnd) {
         runOnJS(onResizeEnd)({
           x: boxX.value,
@@ -156,15 +156,15 @@ function Drag(props: DragProps) {
     ],
     height: boxHeight.value,
     width: boxWidth.value,
-    position: "absolute",
-    flexDirection: I18nManager.isRTL ? "row-reverse" : "row",
+    position: 'absolute',
+    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
   }));
 
   const styles = useMemo(
     () =>
       StyleSheet.create({
         resizeBoxStyle: {
-          position: "absolute",
+          position: 'absolute',
           zIndex: 1,
           right: -28 / 4,
           bottom: -28 / 4,
@@ -174,7 +174,7 @@ function Drag(props: DragProps) {
           width: 28,
         },
       }),
-    []
+    [],
   );
 
   return (
@@ -185,7 +185,7 @@ function Drag(props: DragProps) {
             <Image
               source={resizerImageSource}
               style={styles.imageStyle}
-              resizeMode={"contain"}
+              resizeMode={'contain'}
             />
           </Animated.View>
         </PanGestureHandler>

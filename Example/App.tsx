@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import Drag from 'reanimated-drag-resize';
+import {I18nManager, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {Switch} from 'react-native-gesture-handler';
+import Drag from './src/Drag';
+//@ts-ignore
+import RNRestart from 'react-native-restart';
 
 const generateRandomColor = () => {
   return 'hsl(' + Math.random() * 360 + ', 100%, 75%)';
@@ -34,12 +37,23 @@ const DATA_ARRAY = [
 ];
 
 function App() {
+  const [rtl] = useState(I18nManager.isRTL);
   const [limitationHeight, setLimitationHeight] = useState(0);
   const [limitationWidth, setLimitationWidth] = useState(0);
   const [boxArray, setBoxArray] = useState(DATA_ARRAY);
 
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.sliderContainer}>
+        <Text>RTL </Text>
+        <Switch
+          value={rtl}
+          onValueChange={() => {
+            I18nManager.forceRTL(!rtl);
+            RNRestart.Restart();
+          }}
+        />
+      </View>
       <View
         onLayout={ev => {
           const layout = ev.nativeEvent.layout;
@@ -105,6 +119,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  sliderContainer: {
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
   box: {
     flex: 1,
     justifyContent: 'center',
@@ -114,5 +134,6 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 40,
     backgroundColor: 'lightblue',
+    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
   },
 });

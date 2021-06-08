@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { ImageSourcePropType } from "react-native";
+import { ImageSourcePropType, ViewStyle } from "react-native";
 export declare type Response = {
     x: number;
     y: number;
@@ -21,6 +21,7 @@ export declare type DragProps = {
     resizable?: boolean;
     draggable?: boolean;
     resizerImageSource?: ImageSourcePropType;
+    style?: ViewStyle;
 };
 declare function Drag(props: DragProps): JSX.Element;
 export default Drag;
