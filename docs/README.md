@@ -1,5 +1,3 @@
-# reanimated-drag-resize
-
 Draggable and Resizable React Native Component running at 60FPS using React Native Reanimated v2
 
 [![npm downloads](https://img.shields.io/npm/dm/reanimated-drag-resize.svg?style=for-the-badge)](https://www.npmjs.com/package/reanimated-drag-resize)
