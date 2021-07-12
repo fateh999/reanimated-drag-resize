@@ -8,16 +8,16 @@ Draggable and Resizable React Native Component running at 60FPS using React Nati
 
 ![Demo](https://i.ibb.co/c30NjMn/reanimated-drag-resize-demo.gif)
 
-# Main Dependencies
+## Main Dependencies
 
 - react-native-reanimated v2
 - react-native-gesture-handler
 
-# Import
+## Import
 
     import Drag from 'reanimated-drag-resize';
 
-# Usage
+## Usage
 
 ```jsx
 import React, { useState } from "react";
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-# Props
+## Props
 
 ```
 type  DragProps = {
