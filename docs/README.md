@@ -10,8 +10,14 @@ Draggable and Resizable React Native Component running at 60FPS using React Nati
 
 ## Main Dependencies
 
-- react-native-reanimated v2
-- react-native-gesture-handler
+    - react-native-reanimated v2
+    - react-native-gesture-handler
+
+## Install
+
+    ```
+        yarn add reanimated-drag-resize
+    ```
 
 ## Import
 
