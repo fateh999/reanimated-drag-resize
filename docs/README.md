@@ -13,9 +13,7 @@ Draggable and Resizable React Native Component running at 60FPS using React Nati
 
 ## Install
 
-    ```bash
-        yarn add reanimated-drag-resize
-    ```
+    yarn add reanimated-drag-resize
 
 ## Import
 
