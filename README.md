@@ -21,3 +21,6 @@ Draggable and Resizable React Native Component running at 60FPS using React Nati
 # Documentation :
 
 - [https://fateh999.github.io/reanimated-drag-resize](https://fateh999.github.io/reanimated-drag-resize)
+
+
+<p><a href="https://www.buymeacoffee.com/fateh999"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="fateh999" /></a></p><br><br><br>
